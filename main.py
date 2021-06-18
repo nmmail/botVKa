@@ -7,6 +7,7 @@ import openpyxl
 my_path = "123.xlsx"
 my_wb_obj = openpyxl.load_workbook(my_path)
 my_sheet_obj = my_wb_obj.active
+string = ''
 
 vk_session = vk_api.VkApi(token=main_token)
 session_api = vk_session.get_api()
@@ -25,9 +26,15 @@ for event in longpoll.listen():
                 if str(msg) == str(cell.value):
                     flag_f = True
                     break
-            if(flag_f == True): #
-
-            else : sender(id , 'Группа не найдена.Повторите')
+            if(flag_f == True):
+                for cell in my_sheet_obj['A']:
+                    if str(cell.value) == str(msg):
+                        for row in range(1,8):
+                            string = string + sender(id, str(row))
+                        sender(id, string)
+                        string = ''
+            else :
+                sender(id , 'Группа не найдена.Повторите')
 
 
 
