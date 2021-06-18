@@ -18,7 +18,7 @@ print(E5_form)
 vk_session = vk_api.VkApi(token=main_token)
 session_api = vk_session.get_api()
 longpoll = VkLongPoll(vk_session)
- dsfasdfdsafsdfasdf
+
 def sender(id, text) :
     vk_session.method('messages.send', {'user_id': id, 'message': text, 'random_id': 0})
 
