@@ -40,7 +40,7 @@ for event in longpoll.listen():
 
             else :
                 sender(id , 'Группа не найдена.Повторите')
-
+хуй
 
 
 
