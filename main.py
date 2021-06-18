@@ -7,7 +7,6 @@ import openpyxl
 my_path = "123.xlsx"
 my_wb_obj = openpyxl.load_workbook(my_path)
 my_sheet_obj = my_wb_obj.active
-print(my_sheet_obj.max_row)
 
 vk_session = vk_api.VkApi(token=main_token)
 session_api = vk_session.get_api()
@@ -23,7 +22,8 @@ for event in longpoll.listen():
             msg = event.text.lower()
             id = event.user_id
 
-            if (msg == 'привет') or (msg == 'начать') or (msg == 'здравствуйте'):
-                sender(id,'Здравствуй, уважаемый гость!\nОзнакомиться с каталогом можно в нашем Instagram:\nhttps://www.instagram.com/tkanifurnitura_kazan/')
-
+            if (msg == my_sheet_obj['A']):
+                sender(id,'Группа найдена' + msg)
+            else:
+                sender(id,'Такой группы не существует')
 
