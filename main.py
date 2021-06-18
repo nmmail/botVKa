@@ -32,9 +32,11 @@ for event in longpoll.listen():
                  p = 1
                  for cell in my_sheet_obj['A']:
                      if str(msg) == str(cell.value):
-                                for c in range(1, 9):
-                                 sender(id, my_sheet_obj.cell(row=p, column=c).value)
+                                for c in range(2, 9):
+                                    string = string + str((my_sheet_obj.cell(row=p, column=c)).value) + ' '
 
+                                sender(id, string)
+                     string = ''
                      p = p + 1
                      c = 1
                      print(p)
