@@ -29,6 +29,7 @@ for event in longpoll.listen():
             msg = event.text.lower()
             id = event.user_id
 
-
+            if (msg == 'привет') or (msg == 'начать') or (msg == 'здравствуйте'):
+                sender(id,'Здравствуй, уважаемый гость!\nОзнакомиться с каталогом можно в нашем Instagram:\nhttps://www.instagram.com/tkanifurnitura_kazan/')
 
 
