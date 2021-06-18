@@ -26,6 +26,7 @@ for event in longpoll.listen():
                 if str(msg) == str(cell.value):
                     flag_f = True
                     break
+секс
             if(flag_f == True):
                  c = 1
                  p = 1
@@ -33,7 +34,7 @@ for event in longpoll.listen():
                      if str(msg) == str(cell.value):
                                 for c in range(1, 9):
                                  sender(id, my_sheet_obj.cell(row=p, column=c).value)
-
+сука
                      p = p + 1
                      c = 1
                      print(p)
