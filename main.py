@@ -14,6 +14,7 @@ sheet_val = wb_val['Лист 1']
 E5_form = wb_val['E5'].value
 
 print(E5_form)
+print(E5_form)
 
 vk_session = vk_api.VkApi(token=main_token)
 session_api = vk_session.get_api()
