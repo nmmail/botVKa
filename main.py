@@ -3,18 +3,11 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard
 from toks import main_token
 import openpyxl
-from openpyxl import load_workbook
 
-wb_form = load_workbook(filename='123.xlsx')
-wb_val = load_workbook(filename='123.xlsx', data_only=True)
-
-sheet_form = wb_form['Лист 1']
-sheet_val = wb_val['Лист 1']
-
-E5_form = wb_val['E5'].value
-
-print(E5_form)
-print(E5_form)
+my_path = "123.xlsx"
+my_wb_obj = openpyxl.load_workbook(my_path)
+my_sheet_obj = my_wb_obj.active
+print(my_sheet_obj.max_row)
 
 vk_session = vk_api.VkApi(token=main_token)
 session_api = vk_session.get_api()
