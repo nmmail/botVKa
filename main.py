@@ -26,6 +26,7 @@ for event in longpoll.listen():
                 if str(msg) == str(cell.value):
                     flag_f = True
                     break
+двойной
 секс
             if(flag_f == True):
                  c = 1
