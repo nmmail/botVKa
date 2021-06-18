@@ -17,13 +17,21 @@ def sender(id, text) :
 
 for event in longpoll.listen():
     if event.type == VkEventType.MESSAGE_NEW:
-        if event.to_me:
-
+         if event.to_me:
             msg = event.text.lower()
             id = event.user_id
+            flag_f = False
+            for cell in my_sheet_obj['A']:
+                if str(msg) == str(cell.value):
+                    flag_f = True
+                    break
+            if(flag_f == True): #
 
-            if (msg == my_sheet_obj['A']):
-                sender(id,'Группа найдена' + msg)
-            else:
-                sender(id,'Такой группы не существует')
+            else : sender(id , 'Группа не найдена.Повторите')
+
+
+
+
+
+
 
