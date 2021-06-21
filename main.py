@@ -56,7 +56,7 @@ def button():
      keyboard.add_line()
      keyboard.add_button("Назад", VkKeyboardColor.NEGATIVE)
      sender(id, "Выберите день недели :", keyboard)
-
+#
 
 
 for event in longpoll.listen():
