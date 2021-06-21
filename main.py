@@ -43,7 +43,7 @@ def readerEx(msg):
 def button():
      keyboard = VkKeyboard(one_time=False)
      buttosn = ["Пондельник", "Вторник", "Среда" , "Четверг" , "Пятница" , "Суббота" ]
-     buttosn_color = [VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY]
+     buttosn_color = [VkKeyboardColor.POSITIVE,VkKeyboardColor.PRIMARY,VkKeyboardColor.PRIMARY,VkKeyboardColor.POSITIVE,VkKeyboardColor.POSITIVE,VkKeyboardColor.PRIMARY]
 
      trg = 0
      for btn, btn_c in zip(buttosn, buttosn_color):
@@ -53,6 +53,8 @@ def button():
              if(btn != 'Суббота'):
                  keyboard.add_line()
              trg = 0
+     keyboard.add_line()
+     keyboard.add_button("Назад", VkKeyboardColor.NEGATIVE)
      sender(id, "Выберите день недели :", keyboard)
 
 
